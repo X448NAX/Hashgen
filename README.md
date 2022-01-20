@@ -2,7 +2,7 @@
 
 A simple Python script for generating a variety of hashes from safe urandom entropy.
 
-For whenever you need a random hash (e.g. setting an app secret) or a random password (although [random words make for better passwords](https://xkcd.com/936/)).
+For whenever you need a random hash (e.g. generating an app secret) or a random password (although [random words make for better passwords](https://xkcd.com/936/)).
 
 ## How to use
 
@@ -40,6 +40,16 @@ python3 hashgen.py -3
 ```
 
 Simple as that!
+
+## Future functionality
+
+I plan to add functionality to this here and there. If there's something you think would benefit it feel free to submit a PR.
+
+## Dependencies
+
+None. Hashgen was created specifically to only use hash functions built into the native Python hashlib library. If you are having issues, make sure you are using at least Python 3.6. I tested against 3.9 when creating this.
+
+Additional hashes from third party libraries may be added in the future, but core functionality will be focused on those natively supported by Python.
 
 ## Disclaimer
 
