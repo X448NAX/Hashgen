@@ -54,3 +54,5 @@ Additional hashes from third party libraries may be added in the future, but cor
 ## Disclaimer
 
 This is a personal hobby project. It has not been audited. However it is using urandom for entropy and makes use of industry standard hashing algorithms, I have not "rolled my own crypto." If you are particularly concerned with security I recommend using at least 384 bit hashes.
+
+Algorithms with known practical hash collision attacks such as MD5 and SHA1 are not and will not be included.
