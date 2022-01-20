@@ -6,4 +6,4 @@ For whenever you need a random hash (e.g. setting an app secret) or a random pas
 
 ## Disclaimer
 
-This is a personal hobby project. It has not been audited. However it is using strong industry standard hashing algorithms, I have not "rolled my own crypto." If you are particularly concerned with security I recommend using at least 384 bit hashes.
+This is a personal hobby project. It has not been audited. However it is using urandom for entropy and makes use of industry standard hashing algorithms, I have not "rolled my own crypto." If you are particularly concerned with security I recommend using at least 384 bit hashes.
