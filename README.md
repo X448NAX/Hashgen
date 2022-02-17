@@ -11,10 +11,6 @@ Download the script, either `cd` to it or put it somewhere in your path, then si
 ```
 usage: hashgen [-h] [--blake2b] [--sha3] [--sha3512] [--shake256] [--sha256] [--sha384] [--sha512]
                [--version]
-hashgen: error: argument -h/--help: ignored explicit argument 'elp'
-jamesbond@Super-Bloody-Fast-Thing App Secret Ed25519-blake2b % python3 appsecretblakegen.py -h   
-usage: hashgen [-h] [--blake2b] [--sha3] [--sha3512] [--shake256] [--sha256] [--sha384] [--sha512]
-               [--version]
 
 Generate a random blake2b, SHA3-384, SHA3-512, SHAKE256, SHA256, SHA384, or SHA512 hash using safe
 entropy from urandom.
