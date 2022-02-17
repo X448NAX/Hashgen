@@ -9,15 +9,16 @@ For whenever you need a random hash (e.g. generating an app secret) or a random 
 Download the script, either `cd` to it or put it somewhere in your path, then simply run the script followed by the hashing algorithm of your choice. Running the script with no arguments will present this help page:
 
 ```
-usage: hashgen [-h] [--blake2b] [--sha3] [--sha3512] [--shake256] [--sha256] [--sha384] [--sha512]
-               [--version]
+usage: hashgen [-h] [--blake2b] [--blake2s] [--sha3] [--sha3512] [--shake256] [--sha256] [--sha384]
+               [--sha512] [--version]
 
-Generate a random blake2b, SHA3-384, SHA3-512, SHAKE256, SHA256, SHA384, or SHA512 hash using safe
-entropy from urandom.
+Generate a random blake2b, blake2s, SHA3-384, SHA3-512, SHAKE256, SHA256, SHA384, or SHA512 hash using
+safe entropy from urandom.
 
 optional arguments:
   -h, --help          show this help message and exit
   --blake2b, -b       hashes random entropy using blake2b
+  --blake2s, -s       hashes random entropy using blake2s (for 32 bit CPUs)
   --sha3, -3          hashes random entropy using sha3-384
   --sha3512, -35      hashes random entropy using sha3-512
   --shake256, -shake  hashes random entropy using shake-256
@@ -36,7 +37,7 @@ hashgen --blake2b
 4de2ca0a16e9f8a038e0d53639a00c8b010d6e164a868a149a40a875438f1c92f232b2bf1cda1d9d06d36407a2359ed2f9ba766330d529c8978a6a575a695f1e
 ```
 
-If it's not in your path:
+If it's not in your path but you have used `cd` to enter the correct directory:
 
 ```
 python3 hashgen.py -3
