@@ -1,11 +1,12 @@
-from hashlib import blake2b, sha512, sha256, sha384, sha3_384, sha3_512, shake_256
+from hashlib import blake2b, blake2s, sha512, sha256, sha384, sha3_384, sha3_512, shake_256
 import secrets
 import argparse
 import sys
 
-parser = argparse.ArgumentParser(prog='hashgen',epilog='https://github.com/X448NAX/Hashgen',description='Generate a random blake2b, SHA3-384, SHA3-512, SHAKE256, SHA256, SHA384, or SHA512 hash using safe entropy from urandom.')
-parser.version = 'hashgen v1.0.2'
+parser = argparse.ArgumentParser(prog='hashgen',epilog='https://github.com/X448NAX/Hashgen',description='Generate a random blake2b, blake2s, SHA3-384, SHA3-512, SHAKE256, SHA256, SHA384, or SHA512 hash using safe entropy from urandom.')
+parser.version = 'hashgen v1.0.3'
 parser.add_argument("--blake2b", "-b", help="hashes random entropy using blake2b", dest="blake2b", action="store_true")
+parser.add_argument("--blake2s", "-s", help="hashes random entropy using blake2s (for 32 bit CPUs)", dest="blake2s", action="store_true")
 parser.add_argument("--sha3", "-3", help="hashes random entropy using sha3-384", dest="sha3", action="store_true")
 parser.add_argument("--sha3512", "-35", help="hashes random entropy using sha3-512", dest="sha3512", action="store_true")
 parser.add_argument("--shake256", "-shake", help="hashes random entropy using shake-256", dest="shake256", action="store_true")
@@ -18,8 +19,9 @@ if len(sys.argv) < 2:
 	sys.exit(1)
 parser.parse_args()
 
-entropy = secrets.token_bytes(64)
+entropy = secrets.token_bytes(4096)
 blake2b = blake2b(entropy).hexdigest()
+blake2s = blake2s(entropy).hexdigest()
 sha256hash = sha256(entropy).hexdigest()
 sha384hash = sha384(entropy).hexdigest()
 sha512hash = sha512(entropy).hexdigest()
@@ -31,6 +33,8 @@ args = parser.parse_args()
 
 if args.blake2b:
 	print(blake2b)
+if args.blake2s:
+	print(blake2s)
 if args.sha256:
 	print(sha256hash)
 if args.sha384:
