@@ -4,7 +4,7 @@ import argparse
 import sys
 
 parser = argparse.ArgumentParser(prog='hashgen',epilog='https://github.com/X448NAX/Hashgen',description='Generate a random blake2b, SHA3-384, SHA3-512, SHAKE256, SHA256, SHA384, or SHA512 hash using safe entropy from urandom.')
-parser.version = 'hashgen v1.0.1'
+parser.version = 'hashgen v1.0.2'
 parser.add_argument("--blake2b", "-b", help="hashes random entropy using blake2b", dest="blake2b", action="store_true")
 parser.add_argument("--sha3", "-3", help="hashes random entropy using sha3-384", dest="sha3", action="store_true")
 parser.add_argument("--sha3512", "-35", help="hashes random entropy using sha3-512", dest="sha3512", action="store_true")
@@ -18,7 +18,7 @@ if len(sys.argv) < 2:
 	sys.exit(1)
 parser.parse_args()
 
-entropy = secrets.token_bytes(32)
+entropy = secrets.token_bytes(64)
 blake2b = blake2b(entropy).hexdigest()
 sha256hash = sha256(entropy).hexdigest()
 sha384hash = sha384(entropy).hexdigest()
