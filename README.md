@@ -9,18 +9,26 @@ For whenever you need a random hash (e.g. generating an app secret) or a random 
 Download the script, either `cd` to it or put it somewhere in your path, then simply run the script followed by the hashing algorithm of your choice. Running the script with no arguments will present this help page:
 
 ```
-usage: hashgen [-h] [--blake2b] [--sha3] [--sha256] [--sha384] [--sha512] [--version]
+usage: hashgen [-h] [--blake2b] [--sha3] [--sha3512] [--shake256] [--sha256] [--sha384] [--sha512]
+               [--version]
+hashgen: error: argument -h/--help: ignored explicit argument 'elp'
+jamesbond@Super-Bloody-Fast-Thing App Secret Ed25519-blake2b % python3 appsecretblakegen.py -h   
+usage: hashgen [-h] [--blake2b] [--sha3] [--sha3512] [--shake256] [--sha256] [--sha384] [--sha512]
+               [--version]
 
-Generate a random blake2b, SHA3-384, SHA256, SHA384, or SHA512 hash using safe entropy from urandom.
+Generate a random blake2b, SHA3-384, SHA3-512, SHAKE256, SHA256, SHA384, or SHA512 hash using safe
+entropy from urandom.
 
 optional arguments:
-  -h, --help      show this help message and exit
-  --blake2b, -b   hashes random entropy using blake2b
-  --sha3, -3      hashes random entropy using sha3-384
-  --sha256, -256  hashes random entropy using sha256
-  --sha384, -384  hashes random entropy using sha384
-  --sha512, -512  hashes random entropy using sha512
-  --version, -v   show program version and exit
+  -h, --help          show this help message and exit
+  --blake2b, -b       hashes random entropy using blake2b
+  --sha3, -3          hashes random entropy using sha3-384
+  --sha3512, -35      hashes random entropy using sha3-512
+  --shake256, -shake  hashes random entropy using shake-256
+  --sha256, -256      hashes random entropy using sha256
+  --sha384, -384      hashes random entropy using sha384
+  --sha512, -512      hashes random entropy using sha512
+  --version, -v       show program version and exit
 
 https://github.com/X448NAX/Hashgen
 ```
